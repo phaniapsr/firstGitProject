@@ -1,0 +1,15 @@
+<div ng-app="demoApp" ng-controller="simpleControllers">
+<ul>
+<li ng-repeat="person in persons | orderBy:'name'">
+{{person.name}} 
+</li>
+</ul>
+Customer Name:
+<input type="text" ng-model="newRecord.name">
+</br>
+<input type="text" ng-model="newRecord.city">
+</br>
+<input type="button" value="Add Customer" ng-click="addCustomer()"/>
+</br>
+<a href="#/view2">View2</a>
+</div>

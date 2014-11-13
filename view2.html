@@ -1,0 +1,7 @@
+<div ng-app="demoApp" ng-controller="simpleControllers">
+<ul>
+<li ng-repeat="person in persons | orderBy:'city'">
+{{person.city}} 
+</li>
+</ul>
+</div>

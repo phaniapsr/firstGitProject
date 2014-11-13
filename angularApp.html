@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="demoApp">
+
+<div ng-view="/">
+</div>
+
+</div>
+<script>
+var varApp = angular.module('demoApp',[]);
+
+varApp.config(function ($routerProvider){
+$routerProvider
+.when('/',{
+	controller:'simpleController',
+	templateUrl: 'view1.html'
+})
+.when('/view2',{
+	controller:'simpleController',
+	templateUrl: 'view2.html'
+})
+.otherwiese({
+redirectTo:'/'
+});
+});
+varApp.controller('simpleController',function($scope){
+$scope.persons=[{name:'phani',city:'hyderabad'},{name:'anand',city:'vijawada'},{name:'srinu',city:'kakinada'},{name:'murali',city:'rajahmundry'},{name:'manu',city:'karapa'}];
+$scope.addCustomer = function(){
+$scope.persons.push({
+name:newRecord.name,
+city:newRecord.city
+})
+});
+</script>
+</body>
+</html>
